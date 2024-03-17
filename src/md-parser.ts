@@ -72,9 +72,6 @@ export class MdParser {
   }
 
   private parseParagraph (paragraph: string): string {
-    this.mdValidator.checkNesting(paragraph);
-    this.mdValidator.checkIncomplete(paragraph);
-
     for (const font of this.fontsMarking) {
       if (!font.pattern.test(paragraph)) continue;
 
