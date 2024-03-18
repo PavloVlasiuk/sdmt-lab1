@@ -70,9 +70,9 @@ export class MdParser {
     this.mdValidator.checkNesting(paragraph);
     this.mdValidator.checkIncomplete(paragraph);
 
-    paragraph = paragraph.replace(CORRECT_PATTERN, (match, startChar, marking, textPart, endChar) => {
+    paragraph = paragraph.replace(CORRECT_PATTERN, (match, marking, textPart) => {
       const font = this.fontsMarking.find((f) => f.marking === marking);
-      const parsedParagraph = startChar + font?.startTag + textPart + font?.endTag + endChar;
+      const parsedParagraph = font?.startTag + textPart + font?.endTag;
       return parsedParagraph;
     });
 

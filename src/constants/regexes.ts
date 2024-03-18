@@ -1,4 +1,4 @@
-export const CORRECT_PATTERN = /(^|\s)(?<marking>[*]{2}|[_`])((?=\S).*?(?=\S))\k<marking>([\s.,:;!?]|$)/g;
+export const CORRECT_PATTERN = /(?<=(?:^|\s))(?<marking>[*]{2}|[_`])((?<=\S).*?(?=\S))\k<marking>(?=(?:[\s.,:;!?]|$))/g;
 
 export const NESTED_PATTERNS = [
   /(?:^|\s)([*]{2}|[_`])\S.*?\s([*]{2}|[_`])\S.*?\S\2\s.*?\S\1(?:[\s.,:;!?]|$)/,
